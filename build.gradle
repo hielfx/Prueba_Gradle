@@ -43,7 +43,7 @@ jar {
     }
 }
 
-task copyDependencies(type: copy){
+task copyDependencies(type: Copy){
 	dependendsOn jar, test
 	from configurations.runtime
 	into "$buildDir/dependencies"
