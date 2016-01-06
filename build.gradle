@@ -44,7 +44,9 @@ jar {
 }
 
 task copyDependencies(type: Copy){
-	dependendsOn jar, test
+	dependsOn jar, test
 	from configurations.runtime
 	into "$buildDir/dependencies"
 }
+
+assemble.dependsOn(copyDependencies)
